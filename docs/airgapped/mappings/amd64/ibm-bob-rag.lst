@@ -1,0 +1,5 @@
+cp.icr.io/cp/bob/bob-rag-mcp-server@sha256:14886e4830409c9dbb653f8a2b43426d5db5a120d85aec5fd82bf61befc98ee8=REGISTRY_HOST/cp/bob/bob-rag-mcp-server:1.19.7-amd64
+cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_001@sha256:607231cbe7ecec388c3d8d61a1d452521526b88a350b3d94b6c1167b767c1bf0=REGISTRY_HOST/cp/bob/bob-rag-snapshot-onprem-chunk_001:1.0.42-amd64
+cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_002@sha256:59b25106c08453c0a43c50ae9824e4908d972c35ba72c7217f8eac0dd571e400=REGISTRY_HOST/cp/bob/bob-rag-snapshot-onprem-chunk_002:1.0.42-amd64
+cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_003@sha256:f11622a7133b7c2ef0afa9b7e62c7a3e1477703e9ac929d35e31d61ccfd1f995=REGISTRY_HOST/cp/bob/bob-rag-snapshot-onprem-chunk_003:1.0.42-amd64
+cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_004@sha256:f9da32194ad679ee498a1283074e6b13054921083075513f2ca4218b59a1f485=REGISTRY_HOST/cp/bob/bob-rag-snapshot-onprem-chunk_004:1.0.42-amd64

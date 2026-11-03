@@ -1,0 +1,34 @@
+# Bob Helm Chart Override Values
+# Copy this file to config.yaml and fill in the values for your environment.
+# Run: ./bobctl install --registry-creds "<username:password>"
+# All fields are optional unless marked Required.
+#
+# !!! WARNING !!!
+# This file will contain SECRETS (API keys, tokens, passwords, TLS certificates)
+# under `bob.modelGateway.secrets`. It is intended as a transient input to `bobctl install`
+# and should NOT be committed to version control, shared, or stored long-term.
+# Add config.yaml to your .gitignore.
+
+# ── Global settings ───────────────────────────────────────────────────────────
+global:
+  operatorNamespace: ibm-bob-operators
+  instanceNamespace: ibm-bob
+  fileStorageClass: "ocs-storagecluster-cephfs"
+  blockStorageClass: "ocs-storagecluster-ceph-rbd"
+  # Registry prefix where images were mirrored.
+  # For real air-gap: <artifactory-host> (e.g. artifactory.example.com or artifactory.example.com/docker-local)
+  # For TechZone simulation (Step 1), retrieve the in-cluster registry route hostname:
+  #   oc get route registry -n bob-registry -o jsonpath='{.spec.host}'
+  imagePullPrefix: <artifactory-host>
+  imagePullSecretName: ibm-entitlement-key
+
+bob:
+  zProxy:
+    enabled: true
+  understand:
+    enabled: true
+
+  modelGateway:
+    modelConfig: "model-gateway.yaml"
+    secrets:
+      VLLM_API_KEY: ""

@@ -1,0 +1,3 @@
+icr.io/cpopen/ibm-redis-cp-operator@sha256:cb34b47ce83ab04501b2ffe72dfd04395ee98ce9869697ec6eba51f8f3e09ecd=REGISTRY_HOST/cpopen/ibm-redis-cp-operator:1.4.0-amd64
+cp.icr.io/cp/ibm-redis-cp-haproxy@sha256:cf8f1c00d05de664e2eae7c5cd55a36aa7463763d4c1b88673cfd171a84cbbfb=REGISTRY_HOST/cp/ibm-redis-cp-haproxy:1.4.0-amd64
+cp.icr.io/cp/ibm-redis-cp-operand@sha256:15578a76b9746b70c72a3d748769f5a8ea711c6bd864cf3d29ce5fbc858081d5=REGISTRY_HOST/cp/ibm-redis-cp-operand:1.4.0-amd64

@@ -1,0 +1,51 @@
+
+# Model Gateway Configuration
+
+# ── Provider definitions ──────────────────────────────────────────────────────
+x-providers:
+
+  inference_service: &nvidia
+    openai_compatible:
+      model: nvidia/nemotron-3-ultra-550b-a55b
+      base_url: https://integrate.api.nvidia.com
+      api_key: env.NVIDIA_API_KEY
+
+    model_info:
+      exposed: true
+      provider: nvidia
+      family: nemotron
+      version: "3-ultra"
+      max_input_tokens: 262144
+      max_output_tokens: 16384
+      supports_prompt_caching: false
+      supports_vision: false
+      mode: chat
+
+    chat_inference_params:
+      temperature: 1
+      top_p: 0.95
+      max_tokens: 16384
+      chat_template_kwargs:
+        enable_thinking: false
+
+# ── Models ────────────────────────────────────────────────────────────────────
+models:
+  # ── ACTIVE MODEL ─────────────────────────────────────────────────────────────
+  - &chat_llm
+    <<: *nvidia
+    model_name: premium-ide
+
+  # ── Aliases ───────────────────────────────────────────────────────────────────
+  - <<: *chat_llm
+    model_name: security
+
+  - <<: *chat_llm
+    model_name: background
+
+
+# ── Router ────────────────────────────────────────────────────────────────────
+routers:
+  - name: router
+    strategy: static
+    static:
+      default_model: premium-ide

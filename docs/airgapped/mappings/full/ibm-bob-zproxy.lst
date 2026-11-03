@@ -1,0 +1,3 @@
+cp.icr.io/cp/bob/bob4z-shell-proxy-bob2@sha256:2ffa1632921b1c3a98bff5f8c20ae35ef5c19a65e01ce7d48a36a76dcd01e072=REGISTRY_HOST/cp/bob/bob4z-shell-proxy-bob2:1.24.17
+cp.icr.io/cp/bob/bob4z-shell-proxy-ragapi@sha256:a9e36fce13fe6233a4635e3f0bedf1f4dd7e7765c51689e2ae0011e076891f2a=REGISTRY_HOST/cp/bob/bob4z-shell-proxy-ragapi:1.24.17
+cp.icr.io/cp/bob/bob4z-shell-proxy-zlookup@sha256:e24d4d3bd506b704262a3c1a46739ed809428fd547df2d454dbf8136b00c12ea=REGISTRY_HOST/cp/bob/bob4z-shell-proxy-zlookup:1.24.17

@@ -1,0 +1,10 @@
+cp.icr.io/cp/bob/bob-admin@sha256:454439511e74ca0fae251934aa2d31d2f8af3d54b13469401dd5e8a332734b64=REGISTRY_HOST/cp/bob/bob-admin:1.8.1-amd64
+cp.icr.io/cp/bob/bob-admin-db@sha256:cc919d13bf3bc3f9621c2d66776baa5bfcf248d7908eb5e4e6fbee8c211e7ca3=REGISTRY_HOST/cp/bob/bob-admin-db:1.4.1-amd64
+cp.icr.io/cp/bob/bob-admin-ui@sha256:2e39732295140f38c1c26dad94a874ee92d71232d72d2da9e6f7cc68c7824ad9=REGISTRY_HOST/cp/bob/bob-admin-ui:1.10.0-amd64
+cp.icr.io/cp/bob/bob-authn@sha256:69f944bf2e14e3b88cdaafb4093617f16ab1793bc3314e256d36878e37f00d99=REGISTRY_HOST/cp/bob/bob-authn:2.4.0-amd64
+cp.icr.io/cp/bob/bob-authz@sha256:546c95fbd60079a90d89062d102850a6094df80e71174a2afc31a67b5e242bbe=REGISTRY_HOST/cp/bob/bob-authz:1.1.4-amd64
+cp.icr.io/cp/bob/bob-gateway@sha256:de1820aa72c8265382e34c4164718c5558d35014668be4bfd42511e327489d26=REGISTRY_HOST/cp/bob/bob-gateway:1.1.0-amd64
+cp.icr.io/cp/bob/bob-inference@sha256:6795f677b1c6b4c281bc010984ed4123e933d7fb5007e0d681c8cb98ea856683=REGISTRY_HOST/cp/bob/bob-inference:1.20.0-amd64
+cp.icr.io/cp/bob/bob-keycloak-scim-plugin@sha256:ac7a29af3c26290c7a09b4825c49dd5288abd459d5cd6ba3de250bf55e45df89=REGISTRY_HOST/cp/bob/bob-keycloak-scim-plugin:1.0.9-amd64
+cp.icr.io/cp/bob/bob-metering@sha256:72ba5a168cdd3489bea58835a68712fd3c6a66f4cde51b87a5fbf88d6611aa62=REGISTRY_HOST/cp/bob/bob-metering:1.5.1-amd64
+icr.io/cpopen/ibm-bob-operator@sha256:308ddabdb2fb3dce50d63407422e1ea5c0c9d8a7b9cca2a7c63d7b61d14deee2=REGISTRY_HOST/cpopen/ibm-bob-operator:1.0.0-amd64

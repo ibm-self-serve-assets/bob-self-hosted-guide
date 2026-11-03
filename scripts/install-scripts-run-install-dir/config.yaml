@@ -1,0 +1,97 @@
+# Bob Helm Chart Override Values
+# Copy this file to config.yaml and fill in the values for your environment.
+# Run: ./bobctl install --registry-creds "<username:password>"
+# All fields are optional unless marked Required.
+#
+# !!! WARNING !!!
+# This file will contain SECRETS (API keys, tokens, passwords, TLS certificates)
+# under `bob.modelGateway.secrets`. It is intended as a transient input to `bobctl install`
+# and should NOT be committed to version control, shared, or stored long-term.
+# Add config.yaml to your .gitignore.
+
+# ── Global settings ───────────────────────────────────────────────────────────
+global:
+  # Namespace where the IBM Bob operator is deployed.
+  # Required.
+  operatorNamespace: ibm-bob-operators
+
+  # Namespace where the Bob instance (CR and workloads) runs.
+  # Required.
+  instanceNamespace: ibm-bob
+
+  # ReadWriteMany-capable storage class for shared volumes.
+  # Required. Examples: ocs-storagecluster-cephfs, managed-nfs-storage
+  fileStorageClass: "ocs-storagecluster-cephfs"
+
+  # ReadWriteOnce-capable storage class for database volumes.
+  # Required. Examples: ocs-storagecluster-ceph-rbd, managed-nfs-storage
+  blockStorageClass: "ocs-storagecluster-ceph-rbd"
+
+  # Registry prefix prepended to all image references.
+  # For air-gapped installs, set this to your private registry host.
+  # Default: icr.io
+  # imagePullPrefix: icr.io
+
+  # Name of the Kubernetes image pull secret used to pull images.
+  # Created automatically by: ./bobctl install --registry-creds "<username:password>"
+  # Default: ibm-entitlement-key
+  imagePullSecretName: ibm-entitlement-key
+
+# ── Bob instance settings ─────────────────────────────────────────────────────
+bob:
+  # Enable Retrieval-Augmented Generation (RAG).
+  # When true, OpenSearch is automatically included in the deployment and image mirroring.
+  # RAG can be enabled on its own, without zProxy.
+  # RAG is also enabled implicitly when zProxy.enabled is true.
+  rag:
+    enabled: false
+  metrics:
+    enabled: true
+
+  # zProxy configures the optional zProxy workload.
+  # zProxy depends on RAG: setting zProxy.enabled: true implies rag.enabled: true
+  # (including OpenSearch), so rag.enabled does not need to be set explicitly.
+  zProxy:
+    # enabled controls whether the zProxy/Z RAG stack (zProxy + hash + zlookup mcp)
+    # is deployed. Enabling zProxy implicitly enables the common RAG workload,
+    # regardless of rag.enabled.
+    # Default: false
+    enabled: false
+  
+    # hashApiSecretName is the name of the Kubernetes Secret that holds the hash API
+    # encryption key. Must be a valid Kubernetes resource name (RFC 1123 subdomain).
+    # Optional; when omitted the controller substitutes a default secret name.
+    
+    # Lifecycle: if the secret does not exist when the controller first reconciles, it
+    # is created as an unmanaged resource (no owner reference) containing a randomly
+    # generated encryption key. Once present, the Deployment is created; it is withheld
+    # until the secret exists.
+    # hashApiSecretName: ""
+  
+    # hashApiSecretKeyName is the bare key name (filename) inside the hash-API secret
+    # that holds the encryption key material. The key is mounted into the hash container
+    # at /run/secrets/hash_api/<key> via a subPath volume mount, and
+    # HASH_API_ENCRYPTION_KEY_FILE is set to that absolute path.
+    # Must not contain a slash.
+    # Optional; when omitted the controller substitutes a default key name.
+    # hashApiSecretKeyName: ""
+
+
+  # Enable the optional Z Understand and Refactor workload.
+  understand:
+    enabled: false
+
+  # Model gateway configuration.
+  # modelConfig: path to a YAML file listing the LLM endpoints Bob can use.
+  # Leave empty to use built-in defaults.
+  # secrets: API keys injected as environment variables into the model gateway
+  # and referenced in the model gateway configuration.
+  modelGateway:
+    modelConfig: "model-gateway.yaml"
+    secrets:
+      AWS_ACCESS_KEY: ""          # AWS access key for Bedrock model access
+      AWS_SECRET_ACCESS_KEY: ""   # AWS secret access key for Bedrock model access
+      AZURE_API_KEY: ""           # API key for Azure OpenAI model access
+      GEMINI_CREDENTIALS: ""      # Credentials for Google Gemini model access
+      NVAPI_API_KEY: ""
+      POOLSIDE_API_KEY: ""      

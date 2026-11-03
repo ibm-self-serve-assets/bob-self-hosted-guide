@@ -1,0 +1,15 @@
+global:
+  operatorNamespace: ibm-bob-operators
+  instanceNamespace: ibm-bob
+
+  fileStorageClass: ocs-storagecluster-cephfs    # RWX — ODF CephFS; Required
+  blockStorageClass: ocs-storagecluster-ceph-rbd # RWO — ODF Ceph RBD; Required
+
+  # imagePullPrefix defaults to icr.io — omit unless you are using a private mirror
+  imagePullSecretName: ibm-entitlement-key
+
+bob:
+  modelGateway:
+    modelConfig: model-gateway.yaml
+    secrets:
+      NVIDIA_API_KEY: "YOUR_API_KEY"  # must match the env.* ref in model-gateway.yaml

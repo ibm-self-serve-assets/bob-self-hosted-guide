@@ -1,0 +1,5 @@
+cp.icr.io/cp/bob/ad-core-server@sha256:8f3de04695c8fc68e657d93451f0fdd533a0fad57fd2ab60a257f54ed27c8b35=REGISTRY_HOST/cp/bob/ad-core-server:3.1.0
+cp.icr.io/cp/bob/bobz-understand@sha256:f8c13b6b3cad4117aa6f3a2a752f292de0e295bbdd9cba60390542291ffe8ad2=REGISTRY_HOST/cp/bob/bobz-understand:3.1.0-RC5
+cp.icr.io/cp/bob/orientdb@sha256:e02a3661705da405e6a97c5e8631f48f300c60b263b4a61471de84c16d76caf1=REGISTRY_HOST/cp/bob/orientdb:3.2.55
+cp.icr.io/cp/bob/refactoring-assistant@sha256:ba857d659cb7e6bb369517014b2f187eed79807cf26fd23b516bd1fec64f1bd8=REGISTRY_HOST/cp/bob/refactoring-assistant:3.1.0
+cp.icr.io/cp/bob/refactoring-assistant-ui@sha256:1bfe6bb14e8a03411eaabf1571626164548afb7aebbfcb8d593005eef6c28ed0=REGISTRY_HOST/cp/bob/refactoring-assistant-ui:3.1.0

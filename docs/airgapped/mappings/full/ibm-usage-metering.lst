@@ -1,0 +1,3 @@
+icr.io/cpopen/ibm-usage-metering-operator@sha256:9e98289b59a0b3d6c3b2c61fd3b6efb2e15c6b2f6c78dc51a4ee87a2829300e7=REGISTRY_HOST/cpopen/ibm-usage-metering-operator:1.0.7
+icr.io/cpopen/cpfs/ibm-usage-metering-instance@sha256:8f5cc6cef986e7147f6fa6e6bd92d5f405571535ea578e0ec280f70e322a69b2=REGISTRY_HOST/cpopen/cpfs/ibm-usage-metering-instance:1.0.7
+icr.io/cpopen/cpfs/cpfs-utils@sha256:050fc75fb194be6bbb5b7ede5349c701717a9590427f081382d1ceb058c73163=REGISTRY_HOST/cpopen/cpfs/cpfs-utils:4.6.23

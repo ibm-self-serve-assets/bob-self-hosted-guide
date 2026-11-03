@@ -1,0 +1,3 @@
+icr.io/cpopen/ibm-pg-operator@sha256:ad4434dbb423b1fa03663836cfeeb1938557b13dad8830f75ca098abf76f2af4=REGISTRY_HOST/cpopen/ibm-pg-operator:v28.4.5-amd64
+icr.io/cpopen/ibm-pg/ibm-pg-18@sha256:1ac341736399732f4274802dd13b53357e186e25be62c3aeb7e70eea8c1eda63=REGISTRY_HOST/cpopen/ibm-pg/ibm-pg-18:18.6-v28.4.5-amd64
+icr.io/cpopen/ibm-pg/ibm-pg-pooler@sha256:55adba72982a3ae36ecaa2a91d78259eb4a7740d5a2d26d0c80fe94a6040284a=REGISTRY_HOST/cpopen/ibm-pg/ibm-pg-pooler:1.25.2-v28.4.5-amd64

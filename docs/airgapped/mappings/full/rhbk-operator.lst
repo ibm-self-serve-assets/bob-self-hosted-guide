@@ -1,0 +1,2 @@
+cp.icr.io/cp/bob/keycloak-rhel9@sha256:cf44f50b2dc7deb3c650e7d0ec5ca2f61fa100acfd4d8d04ab56ed76b48a107b=REGISTRY_HOST/cp/bob/keycloak-rhel9:26.6.4-2
+cp.icr.io/cp/bob/keycloak-rhel9-operator@sha256:044ad30bad46bb0f48dba842e28198e3a9de961b5941bfc09491119e2fd72d1e=REGISTRY_HOST/cp/bob/keycloak-rhel9-operator:26.6.4-2

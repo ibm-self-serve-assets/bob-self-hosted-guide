@@ -1,0 +1,2 @@
+cp.icr.io/cp/bob/wca4z-common-busybox-docker@sha256:075061b6a58bc78938e9c0ea39b9ba5ec74b81fb5143f3e6a42456ad6bd79e08=REGISTRY_HOST/cp/bob/wca4z-common-busybox-docker:1.0.59-amd64
+cp.icr.io/cp/bob/wca4z-common-ubi-minimal-docker@sha256:f7f1144199e0d9982db090087e607da9fbd2a2251b47ecda1e2913279e8f8ebe=REGISTRY_HOST/cp/bob/wca4z-common-ubi-minimal-docker:1.0.224-amd64

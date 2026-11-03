@@ -1,0 +1,1035 @@
+IBM Bob Cluster Snapshot
+Collected : 2026-09-28T13:24:32Z
+Bob NS    : ibm-bob
+Ops NS    : ibm-bob-operators
+
+══════════════════════════════════════════════════════
+1. NODES
+══════════════════════════════════════════════════════
+NAME                  STATUS   ROLES                  AGE    VERSION    INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                                                KERNEL-VERSION                  CONTAINER-RUNTIME
+itz-uqegi5-master-1   Ready    control-plane,master   108m   v1.33.13   10.10.10.11   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+itz-uqegi5-master-2   Ready    control-plane,master   92m    v1.33.13   10.10.10.12   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+itz-uqegi5-master-3   Ready    control-plane,master   109m   v1.33.13   10.10.10.13   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+itz-uqegi5-worker-1   Ready    worker                 91m    v1.33.13   10.10.10.21   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+itz-uqegi5-worker-2   Ready    worker                 91m    v1.33.13   10.10.10.22   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+itz-uqegi5-worker-3   Ready    worker                 91m    v1.33.13   10.10.10.23   <none>        Red Hat Enterprise Linux CoreOS 9.6.20260702-0 (Plow)   5.14.0-570.126.1.el9_6.x86_64   cri-o://1.33.13-2.rhaos4.20.git3c4da7a.el9
+
+NAME                  ZONE     REGION   RACK     CPU   MEMORY       ARCH
+itz-uqegi5-master-1   <none>   <none>   <none>   8     32836460Ki   amd64
+itz-uqegi5-master-2   <none>   <none>   <none>   8     32836460Ki   amd64
+itz-uqegi5-master-3   <none>   <none>   <none>   8     32836464Ki   amd64
+itz-uqegi5-worker-1   <none>   <none>   <none>   16    65808988Ki   amd64
+itz-uqegi5-worker-2   <none>   <none>   <none>   16    65808992Ki   amd64
+itz-uqegi5-worker-3   <none>   <none>   <none>   16    65808976Ki   amd64
+
+══════════════════════════════════════════════════════
+2. POD PLACEMENT — all namespaces, grouped by node
+══════════════════════════════════════════════════════
+
+── NODE: itz-uqegi5-worker-1 ──
+POD                                                NAMESPACE                                STATUS       RESTARTS AGE
+---                                                ---------                                ------       -------- ---
+tuned-rc4xd                                        openshift-cluster-node-tuning-operator   Running      0        91m
+multus-glnrn                                       openshift-multus                         Running      0        91m
+node-ca-zvqxf                                      openshift-image-registry                 Running      0        91m
+noobaa-core-0                                      openshift-storage                        Running      0        72m
+prometheus-k8s-1                                   openshift-monitoring                     Running      0        79m
+dns-default-thqpn                                  openshift-dns                            Running      0        91m
+ovnkube-node-mwfhf                                 openshift-ovn-kubernetes                 Running      0        91m
+node-resolver-45fqg                                openshift-dns                            Running      0        91m
+alertmanager-main-1                                openshift-monitoring                     Running      0        89m
+node-exporter-rxjnd                                openshift-monitoring                     Running      0        90m
+ingress-canary-9rxpt                               openshift-ingress-canary                 Running      0        91m
+uptycs-osquery-kn92t                               uptycs                                   Running      0        77m
+iptables-alerter-c7rxc                             openshift-network-operator               Running      0        91m
+bob-admin-redis-server-1                           ibm-bob                                  Running      0        61m
+tekton-results-postgres-0                          openshift-pipelines                      Running      0        75m
+klusterlet-76b55944f-tsl24                         open-cluster-management-agent            Running      0        80m
+network-check-target-h6mck                         openshift-network-diagnostics            Running      0        91m
+kubequery-78465d499f-k96n8                         uptycs-kubequery                         Running      6        (74m
+coredns-itz-uqegi5-worker-1                        openshift-kni-infra                      Running      0        91m
+machine-config-daemon-tgcw6                        openshift-machine-config-operator        Running      0        91m
+bob-admin-ui-c757b7546-fxmgk                       ibm-bob                                  Running      0        62m
+network-metrics-daemon-bmd24                       openshift-multus                         Running      0        91m
+odf-console-78d57fd8b8-25nm7                       openshift-storage                        Running      0        78m
+bob-metering-7dd4f4c549-grch5                      ibm-bob                                  Running      0        62m
+keepalived-itz-uqegi5-worker-1                     openshift-kni-infra                      Running      0        91m
+metrics-server-794c4bbb4-6fk9n                     openshift-monitoring                     Running      0        90m
+tkn-cli-serve-7d4cf7db6f-l4pjl                     openshift-pipelines                      Running      0        74m
+image-registry-6bfbfc5776-qnvnc                    openshift-image-registry                 Running      0        78m
+router-default-78b799d556-bwxjr                    openshift-ingress                        Running      0        80m
+thanos-querier-765cf879c9-6gfk5                    openshift-monitoring                     Running      0        90m
+klusterlet-agent-d66585f66-h2rtw                   open-cluster-management-agent            Running      0        79m
+insights-runtime-extractor-9x9kn                   openshift-insights                       Running      0        91m
+noobaa-endpoint-679876645c-s69qv                   openshift-storage                        Running      0        71m
+monitoring-plugin-596779dd8c-qpncl                 openshift-monitoring                     Running      0        90m
+kube-state-metrics-65785b679b-nsbdt                openshift-monitoring                     Running      0        90m
+multus-additional-cni-plugins-jgpgp                openshift-multus                         Running      0        91m
+network-check-source-7cbcfb55b4-hvpnq              openshift-network-diagnostics            Running      0        107m
+kube-rbac-proxy-crio-itz-uqegi5-worker-1           openshift-machine-config-operator        Running      0        91m
+openshift-state-metrics-7d647dbf4c-x548q           openshift-monitoring                     Running      0        90m
+pipelines-as-code-watcher-9f8f55778-qlvtn          openshift-pipelines                      Running      0        73m
+pipelines-console-plugin-6d6458f469-9ssbt          openshift-pipelines                      Running      0        73m
+networking-console-plugin-557d4ff8c5-9g2k7         openshift-network-console                Running      0        107m
+networking-console-plugin-557d4ff8c5-mgzkq         openshift-network-console                Running      0        107m
+pipelines-as-code-webhook-7dcf894f48-wn9k6         openshift-pipelines                      Running      0        73m
+sealed-secrets-controller-57f4c79c45-frh4q         sealed-secrets                           Running      0        78m
+metrics-collector-deployment-9cd588d88-nkwx8       open-cluster-management-addon-observability Running      0        79m
+openshift-pipelines-operator-68645b99f6-kcxnf      openshift-operators                      Running      0        76m
+endpoint-observability-operator-77d9c7ff5d-jwz7q   open-cluster-management-addon-observability Running      0        79m
+noobaa-default-backing-store-noobaa-pod-2c41a0d4   openshift-storage                        Running      0        71m
+685f1ed643dcce69727e2826bbf9be585096b4cf774051b5daa5e67540c4zs2 openshift-marketplace                    Completed    0        66m
+2274ff93bb8d96ac3b59bcc27a17c23d7eb4978dcaa1c233a4c715a4cewpkc4 openshift-marketplace                    Completed    0        77m
+36394d3fe2be62534fd4a3e6321ab954da9fcf95c51f711a4bb6d100154w27s openshift-marketplace                    Completed    0        77m
+398b2c661821706c7b46ac44ac7053833788f7a4356e857058b9ea6ed1q6ckg openshift-marketplace                    Completed    0        77m
+3ea51565dcdbcb09e092c14a74a39c8cecaf791ad30607621765394332bwfjj openshift-marketplace                    Completed    0        77m
+40f64e8737ef3f2d565dc0f3d5caf9c41292d6fdafe0ad5b1d7dda2f56k6gn7 openshift-marketplace                    Completed    0        77m
+4c4a23efea483a22ec4fa4fef93b64336f4e72f98360a871875efc7a17szfzg openshift-marketplace                    Completed    0        77m
+a4481b2a63ce812dda0e258ec45f2d7fcf4d849670c68907d3a76e8cf1c9xpn openshift-marketplace                    Completed    0        77m
+ae48fe17e4c38406dfcdff86acfbe17b3049f875b9fbd4585ec19e526azckcb openshift-marketplace                    Completed    0        77m
+dfed10f91f0c497d01d17d92d915ba9137d9f9505657538d8530fea7b5n44g7 openshift-marketplace                    Completed    0        77m
+e008ae69bab7dacda32cdd9f5c89139b162fc7ffc4162c944da73c9f65v9pmh openshift-marketplace                    Completed    0        77m
+e20877828413479ec36cc4215bd8003a80801098d9a615980b463ac32flknwn openshift-marketplace                    Completed    0        77m
+e5cefb831e623f95f996f0046bef1b9f2b1f501a480400634b944ab0efmt7ws openshift-marketplace                    Completed    0        77m
+f77c09c5ccf12c99a7131d5f2cba4c352209f8aeffcf128afab467ccb8ls892 openshift-marketplace                    Completed    0        77m
+e653ef1c65a10df9fac28a7d0bfc5e8921c39bc94ce517e6eac784ddd0q9whd openshift-marketplace                    Completed    0        78m
+prometheus-operator-admission-webhook-897c85cf8-f2b6k openshift-monitoring                     Running      0        104m
+tekton-pipelines-remote-resolvers-67f95bb89d-2lq42 openshift-pipelines                      Running      0        76m
+openshift-storage.cephfs.csi.ceph.com-ctrlplugin-77dd8bc77fdlzr openshift-storage                        Running      0        75m
+openshift-storage.cephfs.csi.ceph.com-nodeplugin-45dqt openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-ctrlplugin-6596f8c848-p2bl6 openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-b2rss openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-csi-addons-qknpd openshift-storage                        Running      0        75m
+
+── NODE: itz-uqegi5-worker-2 ──
+POD                                                NAMESPACE                                STATUS       RESTARTS AGE
+---                                                ---------                                ------       -------- ---
+tuned-n975k                                        openshift-cluster-node-tuning-operator   Running      0        91m
+multus-dlp9w                                       openshift-multus                         Running      0        91m
+node-ca-cl7gp                                      openshift-image-registry                 Running      0        91m
+bob-keycloak-0                                     ibm-bob                                  Running      0        63m
+bob-keycloak-db-1                                  ibm-bob                                  Running      0        65m
+dns-default-74tqs                                  openshift-dns                            Running      0        90m
+ovnkube-node-8x28w                                 openshift-ovn-kubernetes                 Running      0        91m
+node-resolver-lwhhr                                openshift-dns                            Running      0        91m
+node-exporter-km56m                                openshift-monitoring                     Running      0        90m
+ingress-canary-5kwxv                               openshift-ingress-canary                 Running      0        90m
+uptycs-osquery-knnr4                               uptycs                                   Running      0        77m
+iptables-alerter-cntjg                             openshift-network-operator               Running      0        91m
+noobaa-db-pg-cluster-1                             openshift-storage                        Running      0        74m
+bob-admin-redis-server-2                           ibm-bob                                  Running      0        61m
+bob-authz-8bd6cbb7d-ppn4x                          ibm-bob                                  Running      3        (61m
+bob-admin-7b66d6b5dd-ln2d8                         ibm-bob                                  Running      0        62m
+network-check-target-45x44                         openshift-network-diagnostics            Running      0        91m
+coredns-itz-uqegi5-worker-2                        openshift-kni-infra                      Running      0        91m
+machine-config-daemon-4p6g7                        openshift-machine-config-operator        Running      0        91m
+bob-gateway-56d587478c-4zl4b                       ibm-bob                                  Running      0        65m
+network-metrics-daemon-2796n                       openshift-multus                         Running      0        91m
+keepalived-itz-uqegi5-worker-2                     openshift-kni-infra                      Running      0        91m
+router-default-78b799d556-ct6zb                    openshift-ingress                        Running      0        78m
+ibm-pg-operator-5445fdd469-z5v7w                   ibm-bob-operators                        Running      0        65m
+klusterlet-agent-d66585f66-6mb96                   open-cluster-management-agent            Running      0        79m
+insights-runtime-extractor-jqp4c                   openshift-insights                       Running      0        90m
+ibm-bob-operator-865bf9f7cf-pj7fd                  ibm-bob-operators                        Running      0        65m
+ux-backend-server-64d94bf789-7pscd                 openshift-storage                        Running      0        76m
+application-manager-dc44d65d4-rnffc                open-cluster-management-agent-addon      Running      0        80m
+multus-additional-cni-plugins-t5hxl                openshift-multus                         Running      0        91m
+tekton-results-api-56f5dd6ccb-2rm6c                openshift-pipelines                      Running      0        75m
+rook-ceph-operator-5788cfcdbb-v8zd7                openshift-storage                        Running      0        76m
+ocs-metrics-exporter-bcfb7b69c-lwd5z               openshift-storage                        Running      0        76m
+cert-manager-cainjector-68588f9-td8r2              cert-manager                             Running      0        65m
+cert-manager-webhook-844fcc87cf-bkpdm              cert-manager                             Running      0        65m
+cert-policy-controller-5cc4dc8c47-hvggb            open-cluster-management-agent-addon      Running      0        79m
+bob-admin-redis-haproxy-7477d5c9d7-95mpl           ibm-bob                                  Running      0        62m
+klusterlet-addon-search-68fcdd5cf7-q7grw           open-cluster-management-agent-addon      Running      0        80m
+kube-rbac-proxy-crio-itz-uqegi5-worker-2           openshift-machine-config-operator        Running      0        91m
+config-policy-controller-58dddcb494-59kc7          open-cluster-management-agent-addon      Running      0        78m
+klusterlet-addon-workmgr-78dd9c6bd6-7npj4          open-cluster-management-agent-addon      Running      0        80m
+tekton-chains-controller-77df9d45dc-l6cv4          openshift-pipelines                      Running      0        75m
+tekton-pipelines-webhook-6c9f7bc4c8-zb2wg          openshift-pipelines                      Running      0        76m
+governance-policy-framework-7764dc7647-ltsdb       open-cluster-management-agent-addon      Running      0        79m
+ceph-csi-controller-manager-79cd4c79d5-hl8qt       openshift-storage                        Running      0        76m
+odf-operator-controller-manager-78b445db99-g6l8m   openshift-storage                        Running      0        78m
+tekton-triggers-core-interceptors-6d7579d46-bxlc5  openshift-pipelines                      Running      0        75m
+cert-manager-operator-controller-manager-86b6d549d6-rjsvv cert-manager-operator                    Running      0        66m
+managed-serviceaccount-addon-agent-55c659c849-7drl8 open-cluster-management-agent-addon      Running      0        80m
+tekton-results-retention-policy-agent-66686fff6c-48lk6 openshift-pipelines                      Running      0        75m
+openshift-storage.cephfs.csi.ceph.com-ctrlplugin-77dd8bc775qzcj openshift-storage                        Running      0        75m
+openshift-storage.cephfs.csi.ceph.com-nodeplugin-ctptv openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-csi-addons-h4fbz openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-xm7hq openshift-storage                        Running      0        75m
+
+── NODE: itz-uqegi5-worker-3 ──
+POD                                                NAMESPACE                                STATUS       RESTARTS AGE
+---                                                ---------                                ------       -------- ---
+bob-db-1                                           ibm-bob                                  Running      0        64m
+tuned-bk5tk                                        openshift-cluster-node-tuning-operator   Running      0        91m
+multus-dm2ll                                       openshift-multus                         Running      0        91m
+node-ca-jp4wh                                      openshift-image-registry                 Running      0        91m
+prometheus-k8s-0                                   openshift-monitoring                     Running      0        78m
+bob-db-init-ffbq6                                  ibm-bob                                  Completed    0        64m
+dns-default-xjsfk                                  openshift-dns                            Running      0        91m
+ovnkube-node-z7xkh                                 openshift-ovn-kubernetes                 Running      0        91m
+node-resolver-8khnp                                openshift-dns                            Running      0        91m
+alertmanager-main-0                                openshift-monitoring                     Running      0        88m
+node-exporter-plqvh                                openshift-monitoring                     Running      0        90m
+ingress-canary-7ptr6                               openshift-ingress-canary                 Running      0        91m
+uptycs-osquery-jgl5q                               uptycs                                   Running      0        77m
+iptables-alerter-6jrnr                             openshift-network-operator               Running      0        91m
+noobaa-db-pg-cluster-2                             openshift-storage                        Running      0        73m
+bob-admin-redis-server-0                           ibm-bob                                  Running      0        62m
+remove-cluster-role-mfskt                          openshift-config                         ImagePullBackOff 0        63m
+bob-authn-54d4cf7557-ngp8q                         ibm-bob                                  Running      0        62m
+network-check-target-vpr42                         openshift-network-diagnostics            Running      0        91m
+coredns-itz-uqegi5-worker-3                        openshift-kni-infra                      Running      0        91m
+machine-config-daemon-hnw6q                        openshift-machine-config-operator        Running      0        91m
+network-metrics-daemon-blss8                       openshift-multus                         Running      0        91m
+cert-manager-69f688d49c-mp78g                      cert-manager                             Running      0        65m
+rhbk-operator-75c56cd98-6hjzv                      ibm-bob-operators                        Running      0        65m
+ocs-operator-55bd5c6d9f-lc25p                      openshift-storage                        Running      0        76m
+bob-inference-7857c4998b-n5s9n                     ibm-bob                                  Running      0        62m
+keepalived-itz-uqegi5-worker-3                     openshift-kni-infra                      Running      0        91m
+metrics-server-794c4bbb4-cbd7g                     openshift-monitoring                     Running      0        90m
+image-registry-6bfbfc5776-f42tp                    openshift-image-registry                 Running      0        78m
+router-default-78b799d556-xjx2v                    openshift-ingress                        Running      0        77m
+thanos-querier-765cf879c9-qzndn                    openshift-monitoring                     Running      0        90m
+klusterlet-agent-d66585f66-qf59m                   open-cluster-management-agent            Running      0        79m
+insights-runtime-extractor-c87hb                   openshift-insights                       Running      0        91m
+noobaa-operator-596c59cd88-mprnp                   openshift-storage                        Running      0        75m
+telemeter-client-6db56f6597-z5sdh                  openshift-monitoring                     Running      0        89m
+monitoring-plugin-596779dd8c-nkm8z                 openshift-monitoring                     Running      0        90m
+multus-additional-cni-plugins-7wwzd                openshift-multus                         Running      0        91m
+bob-metering-worker-56b8f5dbdd-hsgs7               ibm-bob                                  Running      0        62m
+ibm-redis-cp-operator-7d8f976855-5sdr2             ibm-bob-operators                        Running      0        65m
+ibm-itz-deployer-operator-catalog-csx6j            openshift-marketplace                    Running      0        77m
+tekton-operator-webhook-f4ff4c9f8-8ndbl            openshift-operators                      Running      0        76m
+tekton-results-watcher-77774d9d99-prk5p            openshift-pipelines                      Running      1        (73m
+kube-rbac-proxy-crio-itz-uqegi5-worker-3           openshift-machine-config-operator        Running      0        91m
+tekton-triggers-webhook-66d7c9f6c5-pwgqc           openshift-pipelines                      Running      0        75m
+cnpg-controller-manager-6f54c66bf9-f2ddg           openshift-storage                        Running      0        75m
+cluster-proxy-proxy-agent-894c66654-hdpt2          open-cluster-management-agent-addon      Running      1        (73m
+tekton-events-controller-866c7c5676-wbclt          openshift-pipelines                      Running      0        76m
+tekton-triggers-controller-8dbf54887-5rs8w         openshift-pipelines                      Running      0        75m
+ibm-usage-metering-operator-cd8b9df65-cgqw5        ibm-bob-operators                        Running      0        65m
+ocs-client-operator-console-f554c548f-qm7sp        openshift-storage                        Running      0        76m
+ibm-usage-metering-instance-7c55f747c5-lzsqr       ibm-bob                                  Running      0        65m
+tekton-pipelines-controller-5c5cc8b9cc-tfjxc       openshift-pipelines                      Running      0        76m
+pipelines-as-code-controller-6578d8b696-72npx      openshift-pipelines                      Running      0        73m
+tekton-operator-proxy-webhook-6f954b496-lk5cx      openshift-pipelines                      Running      0        76m
+csi-addons-controller-manager-76bd8f7bf9-vx8hj     openshift-storage                        Running      0        76m
+odf-external-snapshotter-operator-d74c7f944-cjf2k  openshift-storage                        Running      0        76m
+prometheus-operator-admission-webhook-897c85cf8-k29qn openshift-monitoring                     Running      0        104m
+external-secrets-operator-controller-manager-796f9c9796-jrmx5 openshift-operators                      Running      0        76m
+itz-deployer-operator-controller-manager-6cbccb8f9b-vxbgb openshift-operators                      Running      0        76m
+openshift-storage.cephfs.csi.ceph.com-nodeplugin-4rmjv openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-ctrlplugin-6596f8c848-2v8n6 openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-cljzj openshift-storage                        Running      0        75m
+openshift-storage.rbd.csi.ceph.com-nodeplugin-csi-addons-d2mjl openshift-storage                        Running      0        75m
+ocs-client-operator-controller-manager-c7b7fb868-2ghq6 openshift-storage                        Running      0        76m
+
+══════════════════════════════════════════════════════
+3. POD PLACEMENT — ibm-bob (detail)
+══════════════════════════════════════════════════════
+NAME                                               STATUS       NODE                   IP               RESTARTS   AGE
+bob-admin-redis-server-1                           Running      itz-uqegi5-worker-1    10.131.0.66      0          <none>
+bob-metering-7dd4f4c549-grch5                      Running      itz-uqegi5-worker-1    10.131.0.63      0          <none>
+bob-admin-ui-c757b7546-fxmgk                       Running      itz-uqegi5-worker-1    10.131.0.64      0          <none>
+bob-keycloak-0                                     Running      itz-uqegi5-worker-2    10.129.2.45      0          <none>
+bob-gateway-56d587478c-4zl4b                       Running      itz-uqegi5-worker-2    10.129.2.41      0          <none>
+bob-admin-redis-haproxy-7477d5c9d7-95mpl           Running      itz-uqegi5-worker-2    10.129.2.50      0          <none>
+bob-keycloak-db-1                                  Running      itz-uqegi5-worker-2    10.129.2.42      0          <none>
+bob-authz-8bd6cbb7d-ppn4x                          Running      62m                    ago)             3          10.129.2.49
+bob-admin-7b66d6b5dd-ln2d8                         Running      itz-uqegi5-worker-2    10.129.2.51      0          <none>
+bob-admin-redis-server-2                           Running      itz-uqegi5-worker-2    10.129.2.52      0          <none>
+bob-db-init-ffbq6                                  Completed    itz-uqegi5-worker-3    10.128.2.54      0          <none>
+bob-inference-7857c4998b-n5s9n                     Running      itz-uqegi5-worker-3    10.128.2.61      0          <none>
+bob-db-1                                           Running      itz-uqegi5-worker-3    10.128.2.52      0          <none>
+bob-authn-54d4cf7557-ngp8q                         Running      itz-uqegi5-worker-3    10.128.2.59      0          <none>
+bob-admin-redis-server-0                           Running      itz-uqegi5-worker-3    10.128.2.62      0          <none>
+bob-metering-worker-56b8f5dbdd-hsgs7               Running      itz-uqegi5-worker-3    10.128.2.60      0          <none>
+ibm-usage-metering-instance-7c55f747c5-lzsqr       Running      itz-uqegi5-worker-3    10.128.2.49      0          <none>
+
+══════════════════════════════════════════════════════
+4. POD PLACEMENT — ibm-bob-operators (detail)
+══════════════════════════════════════════════════════
+NAME                                               STATUS       NODE                   IP               RESTARTS   AGE
+ibm-bob-operator-865bf9f7cf-pj7fd                  Running      itz-uqegi5-worker-2    10.129.2.39      0          <none>
+ibm-pg-operator-5445fdd469-z5v7w                   Running      itz-uqegi5-worker-2    10.129.2.38      0          <none>
+ibm-redis-cp-operator-7d8f976855-5sdr2             Running      itz-uqegi5-worker-3    10.128.2.46      0          <none>
+ibm-usage-metering-operator-cd8b9df65-cgqw5        Running      itz-uqegi5-worker-3    10.128.2.47      0          <none>
+rhbk-operator-75c56cd98-6hjzv                      Running      itz-uqegi5-worker-3    10.128.2.48      0          <none>
+
+══════════════════════════════════════════════════════
+5. NAMESPACE INVENTORY
+══════════════════════════════════════════════════════
+--- Non-system namespaces (excluding kube-* and openshift-*) ---
+assisted-installer                           Active  111m
+cert-manager                                 Active  66m
+cert-manager-operator                        Active  66m
+default                                      Active  112m
+ibm-bob                                      Active  66m
+ibm-bob-operators                            Active  66m
+itz-uqegi5                                   Active  80m
+open-cluster-management-addon-observability  Active  79m
+open-cluster-management-agent                Active  80m
+open-cluster-management-agent-addon          Active  80m
+open-cluster-management-policies             Active  80m
+sealed-secrets                               Active  78m
+uptycs                                       Active  77m
+uptycs-kubequery                             Active  77m
+
+--- All namespaces ---
+assisted-installer                                Active  111m
+cert-manager                                      Active  66m
+cert-manager-operator                             Active  66m
+default                                           Active  112m
+ibm-bob                                           Active  66m
+ibm-bob-operators                                 Active  66m
+itz-uqegi5                                        Active  80m
+kube-node-lease                                   Active  112m
+kube-public                                       Active  112m
+kube-system                                       Active  112m
+open-cluster-management-addon-observability       Active  79m
+open-cluster-management-agent                     Active  80m
+open-cluster-management-agent-addon               Active  80m
+open-cluster-management-policies                  Active  80m
+openshift                                         Active  105m
+openshift-apiserver                               Active  106m
+openshift-apiserver-operator                      Active  111m
+openshift-authentication                          Active  106m
+openshift-authentication-operator                 Active  111m
+openshift-catalogd                                Active  105m
+openshift-cloud-controller-manager                Active  111m
+openshift-cloud-controller-manager-operator       Active  111m
+openshift-cloud-credential-operator               Active  111m
+openshift-cloud-network-config-controller         Active  111m
+openshift-cloud-platform-infra                    Active  110m
+openshift-cluster-csi-drivers                     Active  111m
+openshift-cluster-machine-approver                Active  111m
+openshift-cluster-node-tuning-operator            Active  111m
+openshift-cluster-olm-operator                    Active  111m
+openshift-cluster-samples-operator                Active  111m
+openshift-cluster-storage-operator                Active  111m
+openshift-cluster-version                         Active  112m
+openshift-config                                  Active  110m
+openshift-config-managed                          Active  110m
+openshift-config-operator                         Active  111m
+openshift-console                                 Active  110m
+openshift-console-operator                        Active  110m
+openshift-console-user-settings                   Active  110m
+openshift-controller-manager                      Active  106m
+openshift-controller-manager-operator             Active  111m
+openshift-dns                                     Active  104m
+openshift-dns-operator                            Active  111m
+openshift-etcd                                    Active  112m
+openshift-etcd-operator                           Active  111m
+openshift-host-network                            Active  107m
+openshift-image-registry                          Active  111m
+openshift-infra                                   Active  112m
+openshift-ingress                                 Active  104m
+openshift-ingress-canary                          Active  95m
+openshift-ingress-operator                        Active  111m
+openshift-insights                                Active  111m
+openshift-kni-infra                               Active  111m
+openshift-kube-apiserver                          Active  112m
+openshift-kube-apiserver-operator                 Active  111m
+openshift-kube-controller-manager                 Active  111m
+openshift-kube-controller-manager-operator        Active  111m
+openshift-kube-scheduler                          Active  111m
+openshift-kube-scheduler-operator                 Active  111m
+openshift-kube-storage-version-migrator           Active  106m
+openshift-kube-storage-version-migrator-operator  Active  111m
+openshift-machine-api                             Active  110m
+openshift-machine-config-operator                 Active  111m
+openshift-marketplace                             Active  111m
+openshift-monitoring                              Active  110m
+openshift-multus                                  Active  107m
+openshift-network-console                         Active  107m
+openshift-network-diagnostics                     Active  107m
+openshift-network-node-identity                   Active  107m
+openshift-network-operator                        Active  111m
+openshift-node                                    Active  105m
+openshift-nutanix-infra                           Active  111m
+openshift-oauth-apiserver                         Active  106m
+openshift-openstack-infra                         Active  111m
+openshift-operator-controller                     Active  105m
+openshift-operator-lifecycle-manager              Active  111m
+openshift-operators                               Active  111m
+openshift-ovirt-infra                             Active  111m
+openshift-ovn-kubernetes                          Active  107m
+openshift-pipelines                               Active  76m
+openshift-route-controller-manager                Active  106m
+openshift-service-ca                              Active  106m
+openshift-service-ca-operator                     Active  111m
+openshift-storage                                 Active  78m
+openshift-user-workload-monitoring                Active  110m
+openshift-vsphere-infra                           Active  111m
+sealed-secrets                                    Active  78m
+uptycs                                            Active  77m
+uptycs-kubequery                                  Active  77m
+
+══════════════════════════════════════════════════════
+6. NODE RESOURCE ALLOCATION (requests vs capacity)
+══════════════════════════════════════════════════════
+
+── itz-uqegi5-worker-1 ──
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests       Limits
+  --------           --------       ------
+  cpu                7488m (48%)    19808m (127%)
+  memory             19262Mi (30%)  33826Mi (53%)
+  ephemeral-storage  20Mi (0%)      2Gi (2%)
+  hugepages-1Gi      0 (0%)         0 (0%)
+  hugepages-2Mi      0 (0%)         0 (0%)
+
+── itz-uqegi5-worker-2 ──
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests       Limits
+  --------           --------       ------
+  cpu                6081m (39%)    19985m (128%)
+  memory             16653Mi (26%)  35538Mi (56%)
+  ephemeral-storage  1304Mi (1%)    8692Mi (9%)
+  hugepages-1Gi      0 (0%)         0 (0%)
+  hugepages-2Mi      0 (0%)         0 (0%)
+
+── itz-uqegi5-worker-3 ──
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests       Limits
+  --------           --------       ------
+  cpu                4844m (31%)    18360m (118%)
+  memory             16554Mi (26%)  26614Mi (42%)
+  ephemeral-storage  1444Mi (1%)    8498Mi (9%)
+  hugepages-1Gi      0 (0%)         0 (0%)
+  hugepages-2Mi      0 (0%)         0 (0%)
+
+══════════════════════════════════════════════════════
+7. STATEFULSETS — ibm-bob
+══════════════════════════════════════════════════════
+NAME                     READY   AGE   CONTAINERS       IMAGES
+bob-admin-redis-server   3/3     62m   redis,sentinel   cp.icr.io/cp/ibm-redis-cp-operand@sha256:15578a76b9746b70c72a3d748769f5a8ea711c6bd864cf3d29ce5fbc858081d5,cp.icr.io/cp/ibm-redis-cp-operand@sha256:15578a76b9746b70c72a3d748769f5a8ea711c6bd864cf3d29ce5fbc858081d5
+bob-keycloak             1/1     64m   keycloak         cp.icr.io/cp/bob/keycloak-rhel9@sha256:ffedd9c68012f3ce5e6d3287775c589fcbe5ba6858afc6b2fd47663fce4b138b
+
+══════════════════════════════════════════════════════
+7b. DEPLOYMENTS — ibm-bob
+══════════════════════════════════════════════════════
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                    IMAGES                                                                                                                   SELECTOR
+bob-admin                     1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-admin@sha256:454439511e74ca0fae251934aa2d31d2f8af3d54b13469401dd5e8a332734b64                       app=bob-admin
+bob-admin-redis-haproxy       1/1     1            1           63m   haproxy                       cp.icr.io/cp/ibm-redis-cp-haproxy@sha256:cf8f1c00d05de664e2eae7c5cd55a36aa7463763d4c1b88673cfd171a84cbbfb                redis-app=bob-admin-redis-haproxy
+bob-admin-ui                  1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-admin-ui@sha256:2e39732295140f38c1c26dad94a874ee92d71232d72d2da9e6f7cc68c7824ad9                    app=bob-admin-ui
+bob-authn                     1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-authn@sha256:69f944bf2e14e3b88cdaafb4093617f16ab1793bc3314e256d36878e37f00d99                       app=bob-authn
+bob-authz                     1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-authz@sha256:546c95fbd60079a90d89062d102850a6094df80e71174a2afc31a67b5e242bbe                       app=bob-authz
+bob-gateway                   1/1     1            1           65m   runtime                       cp.icr.io/cp/bob/bob-gateway@sha256:de1820aa72c8265382e34c4164718c5558d35014668be4bfd42511e327489d26                     app=bob-gateway
+bob-inference                 1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-inference@sha256:6795f677b1c6b4c281bc010984ed4123e933d7fb5007e0d681c8cb98ea856683                   app=bob-inference
+bob-metering                  1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-metering@sha256:72ba5a168cdd3489bea58835a68712fd3c6a66f4cde51b87a5fbf88d6611aa62                    app=bob-metering
+bob-metering-worker           1/1     1            1           62m   runtime                       cp.icr.io/cp/bob/bob-metering@sha256:72ba5a168cdd3489bea58835a68712fd3c6a66f4cde51b87a5fbf88d6611aa62                    app=bob-metering-worker
+ibm-usage-metering-instance   1/1     1            1           65m   ibm-usage-metering-instance   icr.io/cpopen/cpfs/ibm-usage-metering-instance@sha256:8f5cc6cef986e7147f6fa6e6bd92d5f405571535ea578e0ec280f70e322a69b2   app.kubernetes.io/component=ibm-usage-metering-instance,app.kubernetes.io/managed-by=ibm-usage-metering-operator,app.kubernetes.io/name=ibm-usage-metering,app.kubernetes.io/version=1.0.7
+
+══════════════════════════════════════════════════════
+8. BOB CUSTOM RESOURCE
+══════════════════════════════════════════════════════
+apiVersion: v1
+items:
+- apiVersion: bob.ibm.com/v1beta1
+  kind: Bob
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: ibm-bob
+      meta.helm.sh/release-namespace: ibm-bob
+    creationTimestamp: "2026-09-28T12:19:05Z"
+    finalizers:
+    - bob.ibm.com/finalizer
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: ibm-bob
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: ibm-bob
+      app.kubernetes.io/version: 2.0.0-3
+    name: bob-cr
+    namespace: ibm-bob
+    resourceVersion: "63963"
+    uid: fd5f4f7a-9758-4fcf-a965-adccd6c7fba7
+  spec:
+    blockStorageClass: ocs-storagecluster-ceph-rbd
+    fileStorageClass: ocs-storagecluster-cephfs
+    imagePullPrefix: icr.io
+    imagePullSecret: ibm-entitlement-key
+    license:
+      accept: true
+    metering:
+      enabled: true
+    metrics:
+      enabled: true
+    rag:
+      enabled: false
+    understand:
+      enabled: false
+      setupSecretName: bobz-understand-setup
+    version: 2.0.0
+    zProxy:
+      enabled: false
+      hashApiSecretKeyName: encryption_key
+      hashApiSecretName: hash-api-secret
+  status:
+    conditions:
+    - lastTransitionTime: "2026-09-28T12:22:07Z"
+      message: Last reconciliation succeeded
+      reason: Reconciling
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2026-09-28T12:19:12Z"
+      message: zProxy controller is actively working toward the desired state
+      observedGeneration: 1
+      reason: Reconciling
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2026-09-28T12:19:12Z"
+      message: zProxy workload is operating as expected
+      observedGeneration: 1
+      reason: AsExpected
+      status: "False"
+      type: Degraded
+    rag:
+      status: Disabled
+    understand:
+      status: Disabled
+    zProxy:
+      status: Disabled
+kind: List
+metadata:
+  resourceVersion: ""
+
+══════════════════════════════════════════════════════
+9. RESOURCE REQUESTS & LIMITS — ibm-bob
+══════════════════════════════════════════════════════
+POD                                                  CONTAINER              CPU_REQ      CPU_LIM      MEM_REQ      MEM_LIM
+bob-admin-7b66d6b5dd-ln2d8                           runtime                2            4            2Gi          4Gi
+bob-admin-redis-haproxy-7477d5c9d7-95mpl             haproxy                30m          1            64Mi         1Gi
+bob-admin-redis-server-0                             redis                  100m         1            400Mi        2Gi
+bob-admin-redis-server-0                             sentinel               20m          300m         50Mi         512Mi
+bob-admin-redis-server-1                             redis                  100m         1            400Mi        2Gi
+bob-admin-redis-server-1                             sentinel               20m          300m         50Mi         512Mi
+bob-admin-redis-server-2                             redis                  100m         1            400Mi        2Gi
+bob-admin-redis-server-2                             sentinel               20m          300m         50Mi         512Mi
+bob-admin-ui-c757b7546-fxmgk                         runtime                2            4            2Gi          4Gi
+bob-authn-54d4cf7557-ngp8q                           runtime                250m         1            256Mi        1Gi
+bob-authz-8bd6cbb7d-ppn4x                            runtime                250m         1            256Mi        1Gi
+bob-db-1                                             postgres               100m         500m         256Mi        1Gi
+bob-db-init-ffbq6                                    init                   1            1            512Mi        1Gi
+bob-gateway-56d587478c-4zl4b                         runtime                250m         500m         256Mi        512Mi
+bob-inference-7857c4998b-n5s9n                       runtime                750m         2            1536Mi       3Gi
+bob-keycloak-0                                       keycloak               -            -            1700Mi       2Gi
+bob-keycloak-db-1                                    postgres               -            -            -            -
+bob-metering-7dd4f4c549-grch5                        runtime                200m         300m         150Mi        250Mi
+bob-metering-worker-56b8f5dbdd-hsgs7                 runtime                200m         300m         150Mi        250Mi
+ibm-usage-metering-instance-7c55f747c5-lzsqr         ibm-usage-metering-instance 40m          250m         50Mi         200Mi
+
+══════════════════════════════════════════════════════
+10. AFFINITY & TOPOLOGY SPREAD CONSTRAINTS — ibm-bob
+══════════════════════════════════════════════════════
+
+--- bob-admin-7b66d6b5dd-ln2d8
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-admin-redis-haproxy-7477d5c9d7-95mpl
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchLabels": {
+                            "redis-app": "bob-admin-redis-haproxy"
+                        }
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}
+
+--- bob-admin-redis-server-0
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchLabels": {
+                            "redis-app": "bob-admin-redis"
+                        }
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 100
+            }
+        ]
+    }
+}
+
+--- bob-admin-redis-server-1
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchLabels": {
+                            "redis-app": "bob-admin-redis"
+                        }
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 100
+            }
+        ]
+    }
+}
+
+--- bob-admin-redis-server-2
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchLabels": {
+                            "redis-app": "bob-admin-redis"
+                        }
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 100
+            }
+        ]
+    }
+}
+
+--- bob-admin-ui-c757b7546-fxmgk
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-authn-54d4cf7557-ngp8q
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-authz-8bd6cbb7d-ppn4x
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-db-1
+  affinity: {
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchExpressions": [
+                            {
+                                "key": "pg.ibm.com/cluster",
+                                "operator": "In",
+                                "values": [
+                                    "bob-db"
+                                ]
+                            },
+                            {
+                                "key": "pg.ibm.com/podRole",
+                                "operator": "In",
+                                "values": [
+                                    "instance"
+                                ]
+                            }
+                        ]
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 100
+            }
+        ]
+    }
+}
+
+--- bob-db-init-ffbq6
+  (none)
+
+--- bob-gateway-56d587478c-4zl4b
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-inference-7857c4998b-n5s9n
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-keycloak-0
+  topologySpreadConstraints: [
+    {
+        "labelSelector": {
+            "matchLabels": {
+                "app": "keycloak",
+                "app.kubernetes.io/component": "server",
+                "app.kubernetes.io/instance": "bob-keycloak",
+                "app.kubernetes.io/managed-by": "keycloak-operator"
+            }
+        },
+        "maxSkew": 1,
+        "topologyKey": "topology.kubernetes.io/zone",
+        "whenUnsatisfiable": "ScheduleAnyway"
+    },
+    {
+        "labelSelector": {
+            "matchLabels": {
+                "app": "keycloak",
+                "app.kubernetes.io/component": "server",
+                "app.kubernetes.io/instance": "bob-keycloak",
+                "app.kubernetes.io/managed-by": "keycloak-operator"
+            }
+        },
+        "maxSkew": 1,
+        "topologyKey": "kubernetes.io/hostname",
+        "whenUnsatisfiable": "ScheduleAnyway"
+    }
+]
+
+--- bob-keycloak-db-1
+  affinity: {
+    "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+                "podAffinityTerm": {
+                    "labelSelector": {
+                        "matchExpressions": [
+                            {
+                                "key": "pg.ibm.com/cluster",
+                                "operator": "In",
+                                "values": [
+                                    "bob-keycloak-db"
+                                ]
+                            },
+                            {
+                                "key": "pg.ibm.com/podRole",
+                                "operator": "In",
+                                "values": [
+                                    "instance"
+                                ]
+                            }
+                        ]
+                    },
+                    "topologyKey": "kubernetes.io/hostname"
+                },
+                "weight": 100
+            }
+        ]
+    }
+}
+
+--- bob-metering-7dd4f4c549-grch5
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- bob-metering-worker-56b8f5dbdd-hsgs7
+  affinity: {
+    "nodeAffinity": {
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+            "nodeSelectorTerms": [
+                {
+                    "matchExpressions": [
+                        {
+                            "key": "kubernetes.io/arch",
+                            "operator": "In",
+                            "values": [
+                                "amd64"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+--- ibm-usage-metering-instance-7c55f747c5-lzsqr
+  (none)
+
+══════════════════════════════════════════════════════
+11. STORAGE CLASSES (cluster-wide)
+══════════════════════════════════════════════════════
+NAME                                         PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+ocs-external-storagecluster-ceph-rbd         openshift-storage.rbd.csi.ceph.com      Delete          Immediate           true                   76m
+ocs-external-storagecluster-cephfs           openshift-storage.cephfs.csi.ceph.com   Delete          Immediate           true                   76m
+ocs-storagecluster-ceph-rbd (default)        openshift-storage.rbd.csi.ceph.com      Delete          Immediate           true                   79m
+ocs-storagecluster-ceph-rbd-virtualization   openshift-storage.rbd.csi.ceph.com      Delete          Immediate           true                   79m
+ocs-storagecluster-cephfs                    openshift-storage.cephfs.csi.ceph.com   Delete          Immediate           true                   79m
+openshift-storage.noobaa.io                  openshift-storage.noobaa.io/obc         Delete          Immediate           false                  72m
+
+══════════════════════════════════════════════════════
+11b. PERSISTENT VOLUME CLAIMS — ibm-bob
+══════════════════════════════════════════════════════
+NAME                STATUS   CAPACITY   STORAGECLASS                  ACCESS          VOLUME
+bob-db-1            Bound    2Gi        ocs-storagecluster-ceph-rbd   ReadWriteOnce   pvc-ce386189-94f8-4dc0-bae2-6540c4406b4c
+bob-keycloak-db-1   Bound    2Gi        ocs-storagecluster-ceph-rbd   ReadWriteOnce   pvc-e44485fb-a1ce-4b26-a83e-a864cd62f7a1
+
+══════════════════════════════════════════════════════
+11c. PERSISTENT VOLUMES (bound to ibm-bob)
+══════════════════════════════════════════════════════
+pvc-ce386189-94f8-4dc0-bae2-6540c4406b4c  2Gi  ReadWriteOnce  ocs-storagecluster-ceph-rbd  ibm-bob/bob-db-1           Delete
+pvc-e44485fb-a1ce-4b26-a83e-a864cd62f7a1  2Gi  ReadWriteOnce  ocs-storagecluster-ceph-rbd  ibm-bob/bob-keycloak-db-1  Delete
+
+══════════════════════════════════════════════════════
+12. SERVICES — ibm-bob
+══════════════════════════════════════════════════════
+NAME                          TYPE        CLUSTER-IP       PORT                    SELECTOR
+bob-admin                     ClusterIP   172.30.96.254    7330                    map[app:bob-admin]
+bob-admin-redis               ClusterIP   None             6379,26379,6380,26380   map[redis-app:bob-admin-redis]
+bob-admin-redis-announce-0    ClusterIP   172.30.156.209   6379,26379,6380,26380   map[redis-app:bob-admin-redis statefulset.kubernetes.io/pod-name:bob-admin-redis-server-0]
+bob-admin-redis-announce-1    ClusterIP   172.30.102.108   6379,26379,6380,26380   map[redis-app:bob-admin-redis statefulset.kubernetes.io/pod-name:bob-admin-redis-server-1]
+bob-admin-redis-announce-2    ClusterIP   172.30.14.226    6379,26379,6380,26380   map[redis-app:bob-admin-redis statefulset.kubernetes.io/pod-name:bob-admin-redis-server-2]
+bob-admin-redis-master-svc    ClusterIP   172.30.232.47    6379,6380               map[redis-app:bob-admin-redis-haproxy]
+bob-admin-ui                  ClusterIP   172.30.243.1     3001                    map[app:bob-admin-ui]
+bob-authn                     ClusterIP   172.30.240.205   7330                    map[app:bob-authn]
+bob-authz                     ClusterIP   172.30.224.252   7330                    map[app:bob-authz]
+bob-db-r                      ClusterIP   172.30.218.255   5432                    map[pg.ibm.com/cluster:bob-db pg.ibm.com/podRole:instance]
+bob-db-ro                     ClusterIP   172.30.58.29     5432                    map[pg.ibm.com/cluster:bob-db pg.ibm.com/instanceRole:replica]
+bob-db-rw                     ClusterIP   172.30.51.61     5432                    map[pg.ibm.com/cluster:bob-db pg.ibm.com/instanceRole:primary]
+bob-gateway                   ClusterIP   172.30.249.137   8443,8080               map[app:bob-gateway]
+bob-inference                 ClusterIP   172.30.21.228    7330                    map[app:bob-inference]
+bob-inference-internal        ClusterIP   172.30.210.156   7331                    map[app:bob-inference]
+bob-keycloak-db-r             ClusterIP   172.30.106.91    5432                    map[pg.ibm.com/cluster:bob-keycloak-db pg.ibm.com/podRole:instance]
+bob-keycloak-db-ro            ClusterIP   172.30.100.153   5432                    map[pg.ibm.com/cluster:bob-keycloak-db pg.ibm.com/instanceRole:replica]
+bob-keycloak-db-rw            ClusterIP   172.30.90.236    5432                    map[pg.ibm.com/cluster:bob-keycloak-db pg.ibm.com/instanceRole:primary]
+bob-keycloak-discovery        ClusterIP   None             7800                    map[app:keycloak app.kubernetes.io/instance:bob-keycloak app.kubernetes.io/managed-by:keycloak-operator]
+bob-keycloak-service          ClusterIP   172.30.237.202   8080,9000               map[app:keycloak app.kubernetes.io/instance:bob-keycloak app.kubernetes.io/managed-by:keycloak-operator]
+bob-metering                  ClusterIP   172.30.32.248    9090                    map[app:bob-metering]
+ibm-usage-metering-instance   ClusterIP   172.30.187.193   8080,8081               map[app.kubernetes.io/component:ibm-usage-metering-instance app.kubernetes.io/managed-by:ibm-usage-metering-operator app.kubernetes.io/name:ibm-usage-metering app.kubernetes.io/version:1.0.7]
+
+══════════════════════════════════════════════════════
+12b. ROUTES — ibm-bob
+══════════════════════════════════════════════════════
+NAME                         HOST                                                                         PORT                       TLS         SERVICE
+bob-gateway-8qk6l            api.bob.ibm-bob.apps.itz-uqegi5.hub01-lb.techzone.ibm.com                    https                      reencrypt   bob-gateway
+bob-gateway-sskdt            bob.ibm-bob.apps.itz-uqegi5.hub01-lb.techzone.ibm.com                        https                      reencrypt   bob-gateway
+bob-keycloak-ingress-k2vt6   bob-keycloak.ibm-bob.apps.itz-uqegi5.hub01-lb.techzone.ibm.com               http                       edge        bob-keycloak-service
+ibm-usage-metering-fetch     ibm-usage-metering-fetch-ibm-bob.apps.itz-uqegi5.hub01-lb.techzone.ibm.com   ibm-usage-metering-fetch   reencrypt   ibm-usage-metering-instance
+
+══════════════════════════════════════════════════════
+13. EVENTS — ibm-bob (warnings only)
+══════════════════════════════════════════════════════
+LAST SEEN   TYPE      REASON             OBJECT                                         MESSAGE
+66m         Warning   FailedScheduling   pod/bob-db-1-initdb-lz75s                      0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+66m         Warning   FailedScheduling   pod/bob-keycloak-db-1-initdb-sjc8l             0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+66m         Warning   FailedScheduling   pod/bob-keycloak-db-1-initdb-sjc8l             0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+66m         Warning   FailedScheduling   pod/bob-db-1-initdb-lz75s                      0/6 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+64m         Warning   Unhealthy          pod/bob-keycloak-0                             Startup probe failed: Get "http://10.129.2.43:9000/health/started": dial tcp 10.129.2.43:9000: connect: connection refused
+64m         Warning   Unhealthy          pod/bob-keycloak-0                             Readiness probe failed: HTTP probe failed with statuscode: 503
+63m         Warning   Unhealthy          pod/bob-keycloak-0                             Startup probe failed: Get "http://10.129.2.45:9000/health/started": dial tcp 10.129.2.45:9000: connect: connection refused
+63m         Warning   Unhealthy          pod/bob-keycloak-0                             Readiness probe failed: HTTP probe failed with statuscode: 503
+63m         Warning   Unhealthy          pod/bob-admin-redis-server-2                   Readiness probe errored and resulted in unknown state: rpc error: code = NotFound desc = container is not created or running: checking if PID of e1a46aceea3951a267ca11202b0315dec91798a52361c06f52d007516a8b7a38 is running failed: container process not found
+62m         Warning   Unhealthy          pod/bob-authn-6bb8d858d6-7r7kh                 Readiness probe failed: Get "https://10.131.0.62:7330/health": dial tcp 10.131.0.62:7330: connect: connection refused
+62m         Warning   Unhealthy          pod/bob-inference-7df87cfd57-4zw65             Readiness probe failed: Get "https://10.131.0.61:7330/healthz": dial tcp 10.131.0.61:7330: connect: connection refused
+62m         Warning   Unhealthy          pod/bob-authn-6bb8d858d6-7r7kh                 Readiness probe failed: Get "https://10.131.0.62:7330/health": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+62m         Warning   Unhealthy          pod/bob-inference-7df87cfd57-4zw65             Readiness probe failed: Get "https://10.131.0.61:7330/healthz": context deadline exceeded
+62m         Warning   Unhealthy          pod/bob-admin-redis-server-1                   Readiness probe errored and resulted in unknown state: rpc error: code = NotFound desc = container is not created or running: checking if PID of 8aa6aa85a358a1907b36090bf3aecad704b5225fe24e0c25e058590bf6448ccb is running failed: container process not found
+62m         Warning   Unhealthy          pod/bob-admin-redis-haproxy-7477d5c9d7-95mpl   Readiness probe failed: HTTP probe failed with statuscode: 503
+62m         Warning   Unhealthy          pod/bob-admin-redis-haproxy-6b98bbbb4d-jvp7d   Readiness probe failed: HTTP probe failed with statuscode: 503
+61m         Warning   BackOff            pod/bob-authz-8bd6cbb7d-ppn4x                  Back-off restarting failed container runtime in pod bob-authz-8bd6cbb7d-ppn4x_ibm-bob(b8f47790-f4ab-4564-bb91-8c0834f1c667)
+61m         Warning   Unhealthy          pod/bob-admin-ui-7f7c85cf57-n7d8h              Readiness probe failed: HTTP probe failed with statuscode: 503
+61m         Warning   Unhealthy          pod/bob-admin-redis-haproxy-6b98bbbb4d-jvp7d   Readiness probe failed: Get "http://10.128.2.56:9094/_haproxy_health": dial tcp 10.128.2.56:9094: connect: connection refused
+61m         Warning   Unhealthy          pod/bob-authz-845fb4649-qhv2c                  Readiness probe failed: Get "https://10.128.2.58:7330/health": dial tcp 10.128.2.58:7330: connect: connection refused
+
+══════════════════════════════════════════════════════
+13b. EVENTS — ibm-bob-operators (warnings only)
+══════════════════════════════════════════════════════
+
+══ Snapshot complete: 2026-09-28T13:24:32Z ══
+Saved to: docs/diagrams/new-cluster-snapshot-20260928-0924.txt

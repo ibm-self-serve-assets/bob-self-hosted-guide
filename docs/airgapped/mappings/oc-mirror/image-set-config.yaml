@@ -1,0 +1,62 @@
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v2alpha1
+mirror:
+  additionalImages:
+    # ===== CORE: always required (22 images) =====
+    - name: icr.io/cpopen/cpfs/ibm-licensing:4.2.24@sha256:fcb08518cec5beded4d7b78835a62ab83596450e175dba2d9de56a13a1928d7b
+    - name: cp.icr.io/cp/bob/bob-admin:1.8.1-amd64@sha256:454439511e74ca0fae251934aa2d31d2f8af3d54b13469401dd5e8a332734b64
+    - name: cp.icr.io/cp/bob/bob-admin-db:1.4.1-amd64@sha256:cc919d13bf3bc3f9621c2d66776baa5bfcf248d7908eb5e4e6fbee8c211e7ca3
+    - name: cp.icr.io/cp/bob/bob-admin-ui:1.10.0-amd64@sha256:2e39732295140f38c1c26dad94a874ee92d71232d72d2da9e6f7cc68c7824ad9
+    - name: cp.icr.io/cp/bob/bob-authn:2.4.0-amd64@sha256:69f944bf2e14e3b88cdaafb4093617f16ab1793bc3314e256d36878e37f00d99
+    - name: cp.icr.io/cp/bob/bob-authz:1.1.4-amd64@sha256:546c95fbd60079a90d89062d102850a6094df80e71174a2afc31a67b5e242bbe
+    - name: cp.icr.io/cp/bob/bob-gateway:1.1.0-amd64@sha256:de1820aa72c8265382e34c4164718c5558d35014668be4bfd42511e327489d26
+    - name: cp.icr.io/cp/bob/bob-inference:1.20.0-amd64@sha256:6795f677b1c6b4c281bc010984ed4123e933d7fb5007e0d681c8cb98ea856683
+    - name: cp.icr.io/cp/bob/bob-keycloak-scim-plugin:1.0.9-amd64@sha256:ac7a29af3c26290c7a09b4825c49dd5288abd459d5cd6ba3de250bf55e45df89
+    - name: cp.icr.io/cp/bob/bob-metering:1.5.1-amd64@sha256:72ba5a168cdd3489bea58835a68712fd3c6a66f4cde51b87a5fbf88d6611aa62
+    - name: icr.io/cpopen/ibm-bob-operator:1.0.0-amd64@sha256:308ddabdb2fb3dce50d63407422e1ea5c0c9d8a7b9cca2a7c63d7b61d14deee2
+    - name: icr.io/cpopen/ibm-pg-operator:v28.4.5@sha256:42210b2f8a3ed14051856b8dc463901605ad8e885a538c858a5f67fcc42862fa
+    - name: icr.io/cpopen/ibm-pg/ibm-pg-18:18.6-v28.4.5@sha256:7ace386fda59961ac0f4a70df8997ae9d34e65dad6f74e2c2143b5a6b9b2db50
+    - name: icr.io/cpopen/ibm-pg/ibm-pg-pooler:1.25.2-v28.4.5@sha256:c5df9d62017bafc4a073695fc9bdcc697f4bfd7933cec03b2ac51aefa0facedd
+    - name: icr.io/cpopen/ibm-redis-cp-operator:1.4.0@sha256:8a6f79071358018eb0af00914b8189224f126e5eb36c0a14548e53a3188d3ce4
+    - name: cp.icr.io/cp/ibm-redis-cp-haproxy:1.4.0@sha256:49cb406b778c33f5cf4b9b07c367d7f0117007fc1a9cd1be57e1dde48d0f1d56
+    - name: cp.icr.io/cp/ibm-redis-cp-operand:1.4.0@sha256:efcd271baf18245998de72fcc38f5e9068603de3b2c98fb12f8bf9d26f56302f
+    - name: icr.io/cpopen/ibm-usage-metering-operator:1.0.7@sha256:9e98289b59a0b3d6c3b2c61fd3b6efb2e15c6b2f6c78dc51a4ee87a2829300e7
+    - name: icr.io/cpopen/cpfs/ibm-usage-metering-instance:1.0.7@sha256:8f5cc6cef986e7147f6fa6e6bd92d5f405571535ea578e0ec280f70e322a69b2
+    - name: icr.io/cpopen/cpfs/cpfs-utils:4.6.23@sha256:050fc75fb194be6bbb5b7ede5349c701717a9590427f081382d1ceb058c73163
+    - name: cp.icr.io/cp/bob/keycloak-rhel9:26.6.4-2-amd64@sha256:ffedd9c68012f3ce5e6d3287775c589fcbe5ba6858afc6b2fd47663fce4b138b
+    - name: cp.icr.io/cp/bob/keycloak-rhel9-operator:26.6.4-2-amd64@sha256:2e00190cd88d026765df408d00a63cee8ceb3cd27ddb43e41b37c85936f4e926
+
+    # ===== RAG (bob.rag.enabled): +5 Bob images, +10 OpenSearch images, +2 shared z-common = 17 images =====
+    # Bob RAG images (ibm-bob-rag.lst)
+    - name: cp.icr.io/cp/bob/bob-rag-mcp-server:1.19.7-amd64@sha256:14886e4830409c9dbb653f8a2b43426d5db5a120d85aec5fd82bf61befc98ee8
+    - name: cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_001:1.0.42-amd64@sha256:607231cbe7ecec388c3d8d61a1d452521526b88a350b3d94b6c1167b767c1bf0
+    - name: cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_002:1.0.42-amd64@sha256:59b25106c08453c0a43c50ae9824e4908d972c35ba72c7217f8eac0dd571e400
+    - name: cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_003:1.0.42-amd64@sha256:f11622a7133b7c2ef0afa9b7e62c7a3e1477703e9ac929d35e31d61ccfd1f995
+    - name: cp.icr.io/cp/bob/bob-rag-snapshot-onprem-chunk_004:1.0.42-amd64@sha256:f9da32194ad679ee498a1283074e6b13054921083075513f2ca4218b59a1f485
+    # OpenSearch vector store (opencontent-opensearch.lst)
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-base-9:1.4.5@sha256:3dffa454fa07734951ffe494969991941b180f25a3be8f3c8643fc886931accc
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-min-3.5.0:1.4.5@sha256:aabefa877189112c211442980aff76c6a4fcdbc79d0527135f79460c49775238
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugins-3.5.0:1.4.5@sha256:4eddce7b4a6e181aefa9334e6c8ef24dae15d3456a916a472834d16ac7530807
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-security-3.5.0.0:1.4.5@sha256:a3dd04832d6357cfd2e6e459ad9b57a6b29b40252d6646b007463e6c5a334210
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-ism-3.5.0.0:1.4.5@sha256:a42704cbcb03d11a630f71c42a1a9c3d4c6a0316a0d272f99c2096a8ea9f4d9e
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-knn-3.5.0.0:1.4.5@sha256:c0d21af1b8a72b04e63b06fca95e427c2bb097d4abc60b905202b2a520dceb13
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-ml-common-3.5.0.0:1.4.5@sha256:5c8c945e579cc2b80486aa65cf099e296eba6ae54ae3ac4f40300fce991d204c
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-neural-search-3.5.0.0:1.4.5@sha256:4cc744a581e9a44290aee4f2ed2198e49f0c831c4536b542127cd60a11b6fc0e
+    - name: cp.icr.io/cp/opencontent-ibm-opensearch-plugin-job-scheduler-3.5.0.0:1.4.5@sha256:2057fe1ed659d8763344a680a100699648650ec10b726816bd72e997c335b3e1
+    - name: icr.io/cpopen/opencontent-ibm-opensearch-operator:1.4.5@sha256:200a06dc6e89094c33ecd55c700c2dc880862cc26784b50500cad440913a726b
+    # Shared helpers (ibm-bob-z-common.lst): keep if you chose RAG, zProxy or Understand
+    - name: cp.icr.io/cp/bob/wca4z-common-busybox-docker:1.0.59-amd64@sha256:075061b6a58bc78938e9c0ea39b9ba5ec74b81fb5143f3e6a42456ad6bd79e08
+    - name: cp.icr.io/cp/bob/wca4z-common-ubi-minimal-docker:1.0.224-amd64@sha256:f7f1144199e0d9982db090087e607da9fbd2a2251b47ecda1e2913279e8f8ebe
+
+    # ===== zProxy / Bob for Z (bob.zProxy.enabled, implies RAG): +3 images (ibm-bob-zproxy.lst) =====
+    - name: cp.icr.io/cp/bob/bob4z-shell-proxy-bob2:1.24.17-amd64@sha256:9a37e9d0df53ee8fc6110016ba964ef9de13c3fffbb472da08b7d31b51ebd333
+    - name: cp.icr.io/cp/bob/bob4z-shell-proxy-ragapi:1.24.17-amd64@sha256:44a9f0deda0b0336371cd3d1c954cde3f82e6eac834dce98e947b8b236c21d34
+    - name: cp.icr.io/cp/bob/bob4z-shell-proxy-zlookup:1.24.17-amd64@sha256:17e0b715527dff3301340eb342a017de205c6a57f16a0f43d92ab69a2e062843
+
+    # ===== Z Understand and Refactor (bob.understand.enabled): +5 images (ibm-bob-understand.lst) =====
+    - name: cp.icr.io/cp/bob/ad-core-server:3.1.0-amd64@sha256:2900af530c67499d540215296c8fa1ae1e9b4a90213058ffe180e5c5428d0c0c
+    - name: cp.icr.io/cp/bob/bobz-understand:3.1.0-RC5-amd64@sha256:535a73c4907b8ec5d572de6f9933ddc0f7b1a925dabba989b405599f92b930bd
+    - name: cp.icr.io/cp/bob/orientdb:3.2.55-amd64@sha256:d3ffa81a800a455cd0443ac87cbde86f093e64b43adb874247f29781ec04fbfe
+    - name: cp.icr.io/cp/bob/refactoring-assistant:3.1.0-amd64@sha256:c79415d63f45cd14f339fafe4dd1339b0772ed825d991b4fcdf690648a955989
+    - name: cp.icr.io/cp/bob/refactoring-assistant-ui:3.1.0-amd64@sha256:82fdbfcc14bc2bf25a0476348cf58b903bb5004caaaa70b7bee10ffcb7043acd
+archiveSize: 9
